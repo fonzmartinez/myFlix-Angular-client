@@ -5,7 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 
-const apiUrl = 'https://enigmatic-eyrie-99477.herokuapp.com';
+const apiUrl = 'https://enigmatic-eyrie-99477.herokuapp.com/';
 @Injectable({
   providedIn: 'root'
 })
