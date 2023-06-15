@@ -1,0 +1,56 @@
+<app-navigation-bar></app-navigation-bar>
+
+<div>
+  <mat-card>
+    <h1>User information:</h1>
+    <mat-card-content>
+      <div><span>Username</span>: {{user.Username}}</div>
+      <div><span>Email</span>: {{user.Email}}</div>
+      <div><span>Birthday</span>: {{user.Birthday | date:'longDate'}} </div>
+      <br>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <h2>Favorite Movies</h2>
+    <div>
+      <mat-card-content *ngFor="let movie of favoriteMovies">
+        <div matListItemTitle>{{movie.Title}}</div>
+        <img matListItemAvatar src="{{movie.ImagePath}}" />
+      </mat-card-content>
+    </div>
+  </mat-card>
+  <br>
+  <br>
+
+  <mat-card>
+    <h2>Update Profile</h2>
+    <form>
+      <mat-form-field>
+        <input matInput [(ngModel)]="userData.Username" type="text" placeholder="Username" name="Username" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput [(ngModel)]="userData.Password" type="password" placeholder="Password" name="Password" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput [(ngModel)]="userData.Email" type="email" placeholder="Email" name="Email" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput [(ngModel)]="userData.Birthday" type="date" placeholder="Birthday" name="Birthday">
+      </mat-form-field>
+    </form>
+  </mat-card>
+  <br>
+  <mat-card>
+    <button mat-raised-button (click)="editUser()" color="primary">
+      Update
+    </button>
+    <br>
+    <br>
+    <br>
+    <button mat-raised-button (click)="deleteUser()" color="warn">Remove account permanently</button>
+  </mat-card>
+</div>
