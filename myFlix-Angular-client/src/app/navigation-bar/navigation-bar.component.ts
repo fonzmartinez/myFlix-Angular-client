@@ -6,6 +6,11 @@ import { Router } from '@angular/router';
   templateUrl: './navigation-bar.component.html',
   styleUrls: ['./navigation-bar.component.scss']
 })
+
+/**
+ * Navigation bar used to route between movie page, profile page,
+ * and gives option to logout
+ */
 export class NavigationBarComponent implements OnInit {
 
   constructor(
@@ -15,35 +20,25 @@ export class NavigationBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Navigates to movies page
+   */
   toMovies(): void {
     this.router.navigate(['movies']);
   }
 
+  /**
+   * Navigates to profile page
+   */
   toProfile(): void {
     this.router.navigate(['profile']);
   }
 
+  /**
+   * Logs out user from page
+   */
   logout(): void {
     this.router.navigate(['welcome']);
     localStorage.clear();
   }
 }
-
-
-/*
-import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-navigation-bar',
-  templateUrl: './navigation-bar.component.html',
-  styleUrls: ['./navigation-bar.component.scss']
-})
-export class NavigationBarComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
-*/
