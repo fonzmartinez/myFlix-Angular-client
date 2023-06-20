@@ -29,7 +29,10 @@ export class UserLoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // This is the function responsible for sending the form inputs to the backend
+  /**
+   * This is the function responsible for sending the form 
+   * inputs to the backend
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.loginData).subscribe((result) => {
       // Logic for a successful user login goes here! (To be implemented)
@@ -50,24 +53,3 @@ export class UserLoginFormComponent implements OnInit {
   }
 
 }
-
-
-
-/*  
-
-import { Component, OnInit, Input } from '@angular/core';
-
-@Component({
-  selector: 'app-user-login-form',
-  templateUrl: './user-login-form.component.html',
-  styleUrls: ['./user-login-form.component.scss']
-})
-export class UserLoginFormComponent implements OnInit {
-
-  @Input() loginData = { Username: '', Password: '' };
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-*/

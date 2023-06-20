@@ -30,6 +30,9 @@ export class UserProfileComponent implements OnInit {
     this.getUser();
   }
 
+  /**
+   * Gets user info and favorites
+   */
   getUser(): void {
     this.user = this.fetchApiData.getUser();
     this.userData.Username = this.user.Username;
@@ -42,6 +45,9 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Updates user's info - username, password, email, DOB
+   */
   editUser(): void {
     this.fetchApiData.editUser(this.userData).subscribe((result) => {
       console.log(result);
@@ -58,6 +64,9 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Delets user account
+   */
   deleteUser(): void {
     if (confirm('Are you sure you want to delete account?')) {
       this.router.navigate(['welcome']).then(() => {
@@ -76,26 +85,6 @@ export class UserProfileComponent implements OnInit {
   }
 
 }
-
-
-/* 
-
-import { Component, OnInit, Input } from '@angular/core';
-
-@Component({
-  selector: 'app-user-profile',
-  templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.scss']
-})
-export class UserProfileComponent implements OnInit {
-
-  constructor(
-  ) { }
-
-  ngOnInit(): void {
-    this.getUser();
-  }
-*/
 
 
 
